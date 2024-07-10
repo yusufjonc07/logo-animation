@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Animate</title>
+</head>
+
+<body>
+    <div class="contanier">
+        <div id="logo-mini">
+
+        </div>
+        <div id="logo-text">
+            <div id="left-img"></div>
+            <div id="middle-img"></div>
+            <div id="right-img"></div>
+        </div>
+
+    </div>
+</body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #0a161b;
+    }
+
+    #logo-text div{
+        background-image: url(./logo-text.png);
+    }
+
+    #logo-text, #logo-mini {
+        position: absolute;
+        top: 25%;
+        left: 27.5%;
+    }
+
+
+   
+
+    #left-img, #right-img{
+        width: 250px;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: 2618px;
+        position: absolute;
+    }
+   
+    @keyframes animate_left {
+        0% {
+            left: 0;
+        }
+        30% {
+            left: -380px; /* Adjust the rotation angle */
+        }
+        70% {
+            left: -380px; /* Adjust the rotation angle */
+        }
+        100% {
+            left: 100%; /* Adjust the final position */
+        }
+    }
+    @keyframes animate_right {
+        0% {
+            left: 430px;
+        }
+        30% {
+            left: 840px; /* Adjust the rotation angle */
+        }
+        70% {
+            left: 840px; /* Adjust the rotation angle */
+        }
+        100% {
+            left: 430px; /* Adjust the final position */
+        }
+    }
+    @keyframes animate_middle {
+        0% {
+            height: 0;
+            opacity: 1;
+        }
+        20% {
+            height: 0;
+            opacity: 1; /* Adjust the rotation angle */
+        }
+        40% {
+            height: 400px;
+            opacity: 1; /* Adjust the rotation angle */
+        }
+        70% {
+            height: 400px;
+            opacity: 1; /* Adjust the rotation angle */
+        }
+        80% {
+            height: 400px;
+            opacity: 0; /* Adjust the rotation angle */
+        }
+       
+
+        100% {
+            height: 400px;
+            opacity: 0; /* Adjust the final position */
+        }
+    }
+
+    @keyframes animate_mini {
+        0% {
+            opacity: 1;
+        }
+        25% {
+            opacity: 0; /* Adjust the rotation angle */
+        }
+        60% {
+            opacity: 0; /* Adjust the rotation angle */
+        }
+        90% {
+            opacity: 0; /* Adjust the rotation angle */
+        }
+
+        100% {
+            opacity: 1; /* Adjust the final position */
+        }
+    }
+
+    #logo-mini{
+        background-image: url(./logo.png);
+        width: 680px;
+        height: 400px;
+        background-position: -55px -105px ;
+        background-repeat: no-repeat;
+        background-size: 800px;
+       animation-delay: 3s;
+        animation: animate_mini 5s 1 ease-in-out;
+    }
+
+
+
+    #left-img{
+        background-position: -425px -622px ;
+       animation-delay: 3s;
+        animation: animate_left 5s 1 ease-in-out;
+        
+    }
+
+    #middle-img{
+        width: 960px;
+        height: 0;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: 2418px;
+        position: absolute;
+        left: -125px;
+        top: 50px;
+        background-position: -720px -622px ;
+       animation-delay: 3s;
+        animation: animate_middle 5s 1 ease-in-out;
+    }
+    
+    #right-img{
+        background-position: -1942px -632px ;
+       animation-delay: 3s;
+        animation: animate_right 5s 1 ease-in-out;
+        left: 430px;
+    }
+
+  
+
+</style>
+
+</html>
